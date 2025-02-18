@@ -1,0 +1,26 @@
+@import "tailwindcss";
+
+.bg-custom-1 {
+    background-color: #283557;
+}
+
+.bg-custom {
+    background-color: #003eda;
+}
+
+
+.text-custom {
+    color: #283557;
+}
+
+.hover-custom:hover {
+    color: #7ae2e4;
+}
+
+.bg-button {
+    background-color: #5068b2;
+}
+
+.hover-button:hover {
+    background-color: #13d5b0;
+}
