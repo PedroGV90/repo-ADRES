@@ -10,6 +10,25 @@ router.get("/", (req, res) => {
   });
 });
 
+// **1. Obtener una adquisición por ID**
+router.get("/id/:id", (req, res) => {
+  const { id } = req.params;
+  
+  db.get("SELECT * FROM Adquisiciones WHERE id = ?", [id], (err, row) => {
+    if (err) {
+      return res.status(500).json({ error: err.message });
+    }
+    
+    if (!row) {
+      return res.status(404).json({ error: "Adquisición no encontrada" });
+    }
+
+    res.json(row);
+  });
+});
+
+
+
 // **2. Insertar una adquisición**
 router.post("/", (req, res) => {
   const { Presupuesto, Unidad, TipoBienServicio, Cantidad, ValorUnitario, FechaAdquisicion, Proveedor, Documentacion } = req.body;

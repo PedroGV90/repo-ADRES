@@ -60,7 +60,7 @@
               "RelativeDocumentMoniker": "Controllers\\AdquisicionesController.cs",
               "ToolTip": "D:\\pruebas\\ADRES\\prueba-tecnica-1\\prueba-ADRES\\API-NetCore\\Controllers\\AdquisicionesController.cs",
               "RelativeToolTip": "Controllers\\AdquisicionesController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAdAAAAAAAAAA==",
+              "ViewState": "AgIAABgAAAAAAAAAAAAowBQAAABUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-18T18:27:22.061Z",
               "EditorCaption": ""
@@ -75,8 +75,7 @@
               "RelativeToolTip": "Data\\AppDbContext.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAABpAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-18T18:26:12.411Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-18T18:26:12.411Z"
             },
             {
               "$type": "Document",
@@ -88,8 +87,7 @@
               "RelativeToolTip": "Models\\Adquisicion.cs",
               "ViewState": "AgIAAAcAAAAAAAAAAAA3wBIAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-18T18:25:31.325Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-18T18:25:31.325Z"
             },
             {
               "$type": "Document",
@@ -101,8 +99,7 @@
               "RelativeToolTip": "Program.cs",
               "ViewState": "AgIAAAEAAAAAAAAAAAAYwBsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-18T18:23:38.571Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-18T18:23:38.571Z"
             }
           ]
         },

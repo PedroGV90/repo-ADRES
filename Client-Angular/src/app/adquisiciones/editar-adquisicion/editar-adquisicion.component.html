@@ -1,0 +1,81 @@
+<form [formGroup]="adquisicionForm" (ngSubmit)="guardarCambios()">
+
+  <div class="container mx-auto px-4 py-8">
+    <h2 class="text-2xl font-bold text-custom mb-6 border-b-2 border-base pb-2">
+      Editar Adquisición
+    </h2>
+
+    <!-- Mensaje de éxito -->
+    <div *ngIf="mensajeExito" class="bg-green-custom text-white text-center p-3 rounded-md mb-4">
+      {{ strmensajeExito }}
+    </div>
+
+    <form [formGroup]="adquisicionForm" (ngSubmit)="guardarCambios()" class="bg-white p-6 rounded-lg shadow-md">
+      <div class="grid grid-cols-2 gap-6">
+
+        <div>
+          <label for="monto" class="block text-gray-700">Monto</label>
+          <input type="number" id="monto" formControlName="monto" placeholder="500,000"
+            class="border p-2 rounded w-full" />
+        </div>
+
+        <div>
+          <label for="categoria" class="block text-gray-700">Categoría</label>
+          <select id="categoria" formControlName="categoria" class="border p-2 rounded w-full">
+            <option value="">Seleccione una categoría</option>
+            <option value="admin-a">Administrativa A</option>
+            <option value="admin-b">Administrativa B</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="descripcion" class="block text-gray-700">Descripción</label>
+          <input type="text" id="descripcion" formControlName="descripcion" placeholder="Equipo de Oficina"
+            class="border p-2 rounded w-full" />
+        </div>
+
+        <div>
+          <label for="cantidad" class="block text-gray-700">Cantidad</label>
+          <input type="number" id="cantidad" formControlName="cantidad" placeholder="10"
+            class="border p-2 rounded w-full" />
+        </div>
+
+        <div>
+          <label for="costoUnidad" class="block text-gray-700">Costo por unidad</label>
+          <input type="number" id="costoUnidad" formControlName="costoUnidad" placeholder="Costo por unidad"
+            class="border p-2 rounded w-full" />
+        </div>
+
+        <div>
+          <label for="costoTotal" class="block text-gray-700">Costo total</label>
+          <input type="number" id="costoTotal" formControlName="costoTotal" placeholder="Costo total"
+            class="border p-2 rounded w-full" />
+        </div>
+
+        <div>
+          <label for="fecha" class="block text-gray-700">Fecha</label>
+          <input type="date" id="fecha" formControlName="fecha" class="border p-2 rounded w-full" />
+        </div>
+
+        <div>
+          <label for="proveedor" class="block text-gray-700">Proveedor</label>
+          <input type="text" id="proveedor" formControlName="proveedor" placeholder="Proveedor S.A."
+            class="border p-2 rounded w-full" />
+        </div>
+
+        <div class="col-span-2">
+          <label for="factura" class="block text-gray-700">Factura</label>
+          <input type="text" id="factura" formControlName="factura" placeholder="Factura 12345"
+            class="border p-2 rounded w-full" />
+        </div>
+
+      </div>
+
+      <div class="flex justify-center mt-6">
+        <button type="submit" [disabled]="adquisicionForm.invalid"
+          class="bg-button hover-button px-4 py-2 text-white rounded">
+          Actualizar Adquisición
+        </button>
+      </div>
+    </form>
+  </div>

@@ -1,26 +1,48 @@
 @import "tailwindcss";
 
+
+
 .bg-custom-1 {
-    background-color: #283557;
+  background-color: #283557;
+}
+
+.bg-custom-white {
+  /* background-color: #003eda; */
+  background-color: #ffffff;
 }
 
 .bg-custom {
-    background-color: #003eda;
+  /* background-color: #003eda; */
+  background-color: #3366CC;
 }
 
+.bg-green-custom {
+  background-color: #12d6af;
+}
+
+.bg-custom-blue-1 {
+  background-color: #4f68b1;
+}
 
 .text-custom {
-    color: #283557;
+  color: #283557;
 }
 
 .hover-custom:hover {
-    color: #7ae2e4;
+  color: #7ae2e4;
 }
 
 .bg-button {
-    background-color: #5068b2;
+  background-color: #5068b2;
 }
 
 .hover-button:hover {
-    background-color: #13d5b0;
+  background-color: #13d5b0;
+}
+
+.fondo-inicio {
+  background-image: url(https://www.adres.gov.co/VUD/PublishingImages/Landing/banner-adres@2x.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }

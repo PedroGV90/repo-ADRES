@@ -1,24 +1,65 @@
 <div class="container mx-auto px-4 py-8">
-    <h2 class="text-2xl font-bold text-custom mb-6 border-b-2 border-base pb-2">Visualizar Adquisiciones</h2>
-    <!-- Table -->
-    <table class="table-auto w-full">
-        <thead class="bg-custom text-white">
-            <tr>
-                <th class="px-4 py-2">Presupuesto</th>
-                <th class="px-4 py-2">Unidad</th>
-                <th class="px-4 py-2">Tipo</th>
-                <th class="px-4 py-2">Cantidad</th>
-                <th class="px-4 py-2">Valor Unitario</th>
-                <th class="px-4 py-2">Valor Total</th>
-                <th class="px-4 py-2">Fecha</th>
-                <th class="px-4 py-2">Proveedor</th>
-                <th class="px-4 py-2">Documentación</th>
-                <th class="px-4 py-2">Acciones</th>
-            </tr>
-        </thead>
-        <tbody>
-            <!-- Table content would go here -->
-        </tbody>
-    </table>
+  <h2 class="text-2xl font-bold text-custom mb-6 border-b-2 border-base pb-2">
+    Visualizar Adquisiciones
+  </h2>
 
+  <!-- Mensaje de éxito -->
+  <div *ngIf="mensajeExito" class="bg-green-custom text-white text-center p-3 rounded-md mb-4">
+    {{ strmensajeExito }}
+  </div>
+
+  <!-- Filtros -->
+  <div class="grid grid-cols-9 gap-2 mb-4">
+    <input type="text" [(ngModel)]="filtros.presupuesto" (input)="aplicarFiltros()" placeholder="Presupuesto" class="border px-3 py-2 rounded-md">
+    <input type="text" [(ngModel)]="filtros.unidad" (input)="aplicarFiltros()" placeholder="Unidad" class="border px-3 py-2 rounded-md">
+    <input type="text" [(ngModel)]="filtros.tipoBienServicio" (input)="aplicarFiltros()" placeholder="Tipo Bien/Servicio" class="border px-3 py-2 rounded-md">
+    <input type="text" [(ngModel)]="filtros.cantidad" (input)="aplicarFiltros()" placeholder="Cantidad" class="border px-3 py-2 rounded-md">
+    <input type="text" [(ngModel)]="filtros.valorUnitario" (input)="aplicarFiltros()" placeholder="Valor Unitario" class="border px-3 py-2 rounded-md">
+    <input type="text" [(ngModel)]="filtros.valorTotal" (input)="aplicarFiltros()" placeholder="Valor Total" class="border px-3 py-2 rounded-md">
+    <input type="text" [(ngModel)]="filtros.fecha" (input)="aplicarFiltros()" placeholder="Fecha" class="border px-3 py-2 rounded-md">
+    <input type="text" [(ngModel)]="filtros.proveedor" (input)="aplicarFiltros()" placeholder="Proveedor" class="border px-3 py-2 rounded-md">
+    <input type="text" [(ngModel)]="filtros.documentacion" (input)="aplicarFiltros()" placeholder="Documentación" class="border px-3 py-2 rounded-md">
+  </div>
+
+  <!-- Tabla -->
+  <div class="overflow-x-auto">
+    <table class="table-auto w-full border-collapse border border-gray-300">
+      <thead class="bg-custom text-white">
+        <tr>
+          <th class="px-4 py-2 border border-gray-400">Presupuesto</th>
+          <th class="px-4 py-2 border border-gray-400">Unidad</th>
+          <th class="px-4 py-2 border border-gray-400">Tipo Bien/Servicio</th>
+          <th class="px-4 py-2 border border-gray-400">Cantidad</th>
+          <th class="px-4 py-2 border border-gray-400">Valor Unitario</th>
+          <th class="px-4 py-2 border border-gray-400">Valor Total</th>
+          <th class="px-4 py-2 border border-gray-400">Fecha</th>
+          <th class="px-4 py-2 border border-gray-400">Proveedor</th>
+          <th class="px-4 py-2 border border-gray-400">Documentación</th>
+          <th class="px-4 py-2 border border-gray-400">Acción</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of adquisicionesFiltradas; trackBy: trackById" class="bg-white hover:bg-gray-100">
+          <td class="px-4 py-2 border border-gray-300">{{ item.Presupuesto }}</td>
+          <td class="px-4 py-2 border border-gray-300">{{ item.Unidad }}</td>
+          <td class="px-4 py-2 border border-gray-300">{{ item.TipoBienServicio }}</td>
+          <td class="px-4 py-2 border border-gray-300">{{ item.Cantidad }}</td>
+          <td class="px-4 py-2 border border-gray-300">{{ item.ValorUnitario }}</td>
+          <td class="px-4 py-2 border border-gray-300">{{ item.ValorTotal }}</td>
+          <td class="px-4 py-2 border border-gray-300">{{ item.FechaAdquisicion }}</td>
+          <td class="px-4 py-2 border border-gray-300">{{ item.Proveedor }}</td>
+          <td class="px-4 py-2 border border-gray-300">{{ item.Documentacion }}</td>
+          <td class="border p-2 flex justify-center space-x-2">
+            <button (click)="eliminarAdquisicion(item.Id)" class="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-700">
+              🗑
+            </button>
+            <a [routerLink]="['/editar-adquisicion', item.Id]"
+              class="bg-blue-500 text-white px-3 py-1 rounded hover:bg-blue-700">
+              ✏️
+            </a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
