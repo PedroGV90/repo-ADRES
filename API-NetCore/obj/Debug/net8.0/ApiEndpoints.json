@@ -1,0 +1,90 @@
+[
+  {
+    "ContainingType": "API_NetCore.Controllers.AdquisicionesController",
+    "Method": "GetAdquisiciones",
+    "RelativePath": "api/adquisiciones",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[API_NetCore.Models.Adquisicion, API-NetCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "API_NetCore.Controllers.AdquisicionesController",
+    "Method": "PostAdquisicion",
+    "RelativePath": "api/adquisiciones",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "adquisicion",
+        "Type": "API_NetCore.Models.Adquisicion",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "API_NetCore.Models.Adquisicion",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "API_NetCore.Controllers.AdquisicionesController",
+    "Method": "GetAdquisicion",
+    "RelativePath": "api/adquisiciones/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "API_NetCore.Models.Adquisicion",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "API_NetCore.Controllers.AdquisicionesController",
+    "Method": "DeleteAdquisicion",
+    "RelativePath": "api/adquisiciones/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]
