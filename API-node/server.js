@@ -1,7 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 require("dotenv").config();
-
+const db = require("./config/database"); // Importamos la conexión a SQLite
 const adquisicionesRoutes = require("./routes/adquisiciones");
 
 const app = express();
@@ -14,6 +14,7 @@ app.use(cors());
 // Rutas
 app.use("/api/adquisiciones", adquisicionesRoutes);
 
+// Iniciar el servidor
 app.listen(PORT, () => {
-  console.log(`Servidor corriendo en http://localhost:${PORT}`);
+  console.log(`🚀 Servidor corriendo en http://localhost:${PORT}`);
 });

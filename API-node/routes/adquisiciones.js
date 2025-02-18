@@ -1,32 +1,58 @@
 const express = require("express");
 const router = express.Router();
-const { sql, poolPromise } = require("../config/db");
+const db = require("../config/database");
 
-// Insertar, actualizar, eliminar y leer adquisiciones
-router.post("/", async (req, res) => {
-  const { Opcion, Id, Presupuesto, Unidad, TipoBienServicio, Cantidad, ValorUnitario, FechaAdquisicion, Proveedor, Documentacion } = req.body;
+// **1. Obtener todas las adquisiciones**
+router.get("/", (req, res) => {
+  db.all("SELECT * FROM Adquisiciones", [], (err, rows) => {
+    if (err) return res.status(500).json({ error: err.message });
+    res.json(rows);
+  });
+});
 
-  try {
-    const pool = await poolPromise;
-    const result = await pool
-      .request()
-      .input("Opcion", sql.VarChar(10), Opcion)
-      .input("Id", sql.Int, Id || null)
-      .input("Presupuesto", sql.Decimal(18, 2), Presupuesto || null)
-      .input("Unidad", sql.VarChar(100), Unidad || null)
-      .input("TipoBienServicio", sql.VarChar(255), TipoBienServicio || null)
-      .input("Cantidad", sql.Int, Cantidad || null)
-      .input("ValorUnitario", sql.Decimal(18, 2), ValorUnitario || null)
-      .input("FechaAdquisicion", sql.Date, FechaAdquisicion || null)
-      .input("Proveedor", sql.VarChar(255), Proveedor || null)
-      .input("Documentacion", sql.Text, Documentacion || null)
-      .execute("CRUD_Adquisiciones");
+// **2. Insertar una adquisición**
+router.post("/", (req, res) => {
+  const { Presupuesto, Unidad, TipoBienServicio, Cantidad, ValorUnitario, FechaAdquisicion, Proveedor, Documentacion } = req.body;
+  const ValorTotal = Cantidad * ValorUnitario;
 
-    res.json(result.recordset);
-  } catch (error) {
-    console.error("Error en la ejecución del SP:", error);
-    res.status(500).json({ error: "Error en la base de datos" });
-  }
+  db.run(
+    `INSERT INTO Adquisiciones (Presupuesto, Unidad, TipoBienServicio, Cantidad, ValorUnitario, ValorTotal, FechaAdquisicion, Proveedor, Documentacion) 
+     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+    [Presupuesto, Unidad, TipoBienServicio, Cantidad, ValorUnitario, ValorTotal, FechaAdquisicion, Proveedor, Documentacion],
+    function (err) {
+      if (err) return res.status(500).json({ error: err.message });
+      res.json({ id: this.lastID, message: "Adquisición registrada correctamente" });
+    }
+  );
+});
+
+// **3. Actualizar una adquisición**
+router.put("/:id", (req, res) => {
+  const { id } = req.params;
+  const { Presupuesto, Unidad, TipoBienServicio, Cantidad, ValorUnitario, FechaAdquisicion, Proveedor, Documentacion } = req.body;
+  const ValorTotal = Cantidad * ValorUnitario;
+
+  db.run(
+    `UPDATE Adquisiciones 
+     SET Presupuesto = ?, Unidad = ?, TipoBienServicio = ?, Cantidad = ?, ValorUnitario = ?, ValorTotal = ?, FechaAdquisicion = ?, Proveedor = ?, Documentacion = ?
+     WHERE Id = ?`,
+    [Presupuesto, Unidad, TipoBienServicio, Cantidad, ValorUnitario, ValorTotal, FechaAdquisicion, Proveedor, Documentacion, id],
+    function (err) {
+      if (err) return res.status(500).json({ error: err.message });
+      if (this.changes === 0) return res.status(404).json({ message: "Adquisición no encontrada" });
+      res.json({ message: "Adquisición actualizada correctamente" });
+    }
+  );
+});
+
+// **4. Eliminar una adquisición**
+router.delete("/:id", (req, res) => {
+  const { id } = req.params;
+  db.run(`DELETE FROM Adquisiciones WHERE Id = ?`, [id], function (err) {
+    if (err) return res.status(500).json({ error: err.message });
+    if (this.changes === 0) return res.status(404).json({ message: "Adquisición no encontrada" });
+    res.json({ message: "Adquisición eliminada correctamente" });
+  });
 });
 
 module.exports = router;
