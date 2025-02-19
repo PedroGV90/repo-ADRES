@@ -73,6 +73,27 @@
   },
   {
     "ContainingType": "API_NetCore.Controllers.AdquisicionesController",
+    "Method": "UpdateAdquisicion",
+    "RelativePath": "api/adquisiciones/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "adquisicion",
+        "Type": "API_NetCore.Models.Adquisicion",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API_NetCore.Controllers.AdquisicionesController",
     "Method": "DeleteAdquisicion",
     "RelativePath": "api/adquisiciones/{id}",
     "HttpMethod": "DELETE",
@@ -86,5 +107,31 @@
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API_NetCore.Controllers.AdquisicionesController",
+    "Method": "GetAdquisicionesById",
+    "RelativePath": "api/adquisiciones/id/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "API_NetCore.Models.Adquisicion",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   }
 ]

@@ -23,6 +23,15 @@ namespace API_NetCore.Controllers
             return await _context.Adquisiciones.ToListAsync();
         }
 
+        // Obtener todas las adquisiciones
+        [HttpGet("id/{id}")]
+        public async Task<ActionResult<Adquisicion>> GetAdquisicionesById(int id)
+        {
+            var adquisicion = await _context.Adquisiciones.Where(x => x.Id == id).FirstOrDefaultAsync();
+            if (adquisicion == null) return NotFound();
+            return adquisicion;
+        }
+
         // Obtener una adquisición por ID
         [HttpGet("{id}")]
         public async Task<ActionResult<Adquisicion>> GetAdquisicion(int id)

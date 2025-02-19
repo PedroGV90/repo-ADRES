@@ -13,6 +13,12 @@ builder.Services.AddDbContext<AppDbContext>();
 // ?? Agregar controladores
 builder.Services.AddControllers();
 
+builder.Services.AddControllers()
+    .AddJsonOptions(options =>
+    {
+        options.JsonSerializerOptions.PropertyNamingPolicy = null; // Desactiva camelCase
+    });
+
 // ?? Habilitar autorización (soluciona el error)
 builder.Services.AddAuthorization();
 

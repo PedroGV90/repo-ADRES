@@ -6,7 +6,9 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class AdquisicionesService {
-  private apiUrl = 'http://localhost:3000/api/adquisiciones'; // Cambia la URL si es diferente
+
+  //private apiUrl = 'http://localhost:5177/api/adquisiciones'; // api net core ///
+   private apiUrl = 'http://localhost:3000/api/adquisiciones'; // api nodejs
 
   constructor(private http: HttpClient) { }
 

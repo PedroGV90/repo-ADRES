@@ -11,12 +11,12 @@
       "RelativeMoniker": "D:0:0:{76AF8974-2895-4B6E-A2A1-C8612980F0DD}|API-NetCore.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{76AF8974-2895-4B6E-A2A1-C8612980F0DD}|API-NetCore.csproj|d:\\pruebas\\adres\\prueba-tecnica-1\\prueba-adres\\api-netcore\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{76AF8974-2895-4B6E-A2A1-C8612980F0DD}|API-NetCore.csproj|solutionrelative:data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{76AF8974-2895-4B6E-A2A1-C8612980F0DD}|API-NetCore.csproj|d:\\pruebas\\adres\\prueba-tecnica-1\\prueba-adres\\api-netcore\\models\\adquisicion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{76AF8974-2895-4B6E-A2A1-C8612980F0DD}|API-NetCore.csproj|solutionrelative:models\\adquisicion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{76AF8974-2895-4B6E-A2A1-C8612980F0DD}|API-NetCore.csproj|d:\\pruebas\\adres\\prueba-tecnica-1\\prueba-adres\\api-netcore\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{76AF8974-2895-4B6E-A2A1-C8612980F0DD}|API-NetCore.csproj|solutionrelative:data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -60,14 +60,14 @@
               "RelativeDocumentMoniker": "Controllers\\AdquisicionesController.cs",
               "ToolTip": "D:\\pruebas\\ADRES\\prueba-tecnica-1\\prueba-ADRES\\API-NetCore\\Controllers\\AdquisicionesController.cs",
               "RelativeToolTip": "Controllers\\AdquisicionesController.cs",
-              "ViewState": "AgIAABgAAAAAAAAAAAAowBQAAABUAAAAAAAAAA==",
+              "ViewState": "AgIAACQAAAAAAAAAAAAUwBoAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-18T18:27:22.061Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "AppDbContext.cs",
               "DocumentMoniker": "D:\\pruebas\\ADRES\\prueba-tecnica-1\\prueba-ADRES\\API-NetCore\\Data\\AppDbContext.cs",
               "RelativeDocumentMoniker": "Data\\AppDbContext.cs",
@@ -79,15 +79,16 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "Adquisicion.cs",
               "DocumentMoniker": "D:\\pruebas\\ADRES\\prueba-tecnica-1\\prueba-ADRES\\API-NetCore\\Models\\Adquisicion.cs",
               "RelativeDocumentMoniker": "Models\\Adquisicion.cs",
               "ToolTip": "D:\\pruebas\\ADRES\\prueba-tecnica-1\\prueba-ADRES\\API-NetCore\\Models\\Adquisicion.cs",
               "RelativeToolTip": "Models\\Adquisicion.cs",
-              "ViewState": "AgIAAAcAAAAAAAAAAAA3wBIAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwBIAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-18T18:25:31.325Z"
+              "WhenOpened": "2025-02-18T18:25:31.325Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -97,9 +98,10 @@
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "D:\\pruebas\\ADRES\\prueba-tecnica-1\\prueba-ADRES\\API-NetCore\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAEAAAAAAAAAAAAYwBsAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAYwBMAAAAHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-18T18:23:38.571Z"
+              "WhenOpened": "2025-02-18T18:23:38.571Z",
+              "EditorCaption": ""
             }
           ]
         },
