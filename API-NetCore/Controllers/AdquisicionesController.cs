@@ -41,6 +41,33 @@ namespace API_NetCore.Controllers
             return CreatedAtAction(nameof(GetAdquisicion), new { id = adquisicion.Id }, adquisicion);
         }
 
+        // Actualizar una adquisición
+        [HttpPut("{id}")]
+        public async Task<IActionResult> UpdateAdquisicion(int id, Adquisicion adquisicion)
+        {
+            if (id != adquisicion.Id) return BadRequest();
+
+            _context.Entry(adquisicion).State = EntityState.Modified;
+
+            try
+            {
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!_context.Adquisiciones.Any(e => e.Id == id))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            return NoContent();
+        }
+
         // Eliminar una adquisición
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteAdquisicion(int id)

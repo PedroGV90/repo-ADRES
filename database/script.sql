@@ -78,3 +78,12 @@ BEGIN
     END
 END;
 GO
+
+EXEC CRUD_Adquisiciones 
+	@Opcion = 'Leer'
+
+-- // DATOS DE ACCESO A LA BASE DE DATOS
+-- SERVER: sql1002.site4now.net
+-- DATABASE: db_ab2f76_adres
+-- PASS: IronMan2024.*.
+-- USER: db_ab2f76_adres_admin

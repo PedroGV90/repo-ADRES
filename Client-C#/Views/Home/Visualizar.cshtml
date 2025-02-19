@@ -1,0 +1,76 @@
+﻿@{
+    
+}
+
+<div class="container py-4">
+    <h2 class="fs-4 fw-bold text-primary mb-4 border-bottom pb-2">
+        Visualizar Adquisiciones
+    </h2>
+
+    <!-- Mensaje de éxito (Ejemplo: oculto por defecto) -->
+    <div id="mensajeExito" class="alert bg-green-custom text-white text-center d-none">
+        Operación exitosa
+    </div>
+
+    <!-- Filtros -->
+    <div class="row g-2 mb-4">
+        <div class="col"><input type="text" id="filtroPresupuesto" class="form-control" placeholder="Presupuesto"></div>
+        <div class="col"><input type="text" id="filtroUnidad" class="form-control" placeholder="Unidad"></div>
+        <div class="col"><input type="text" id="filtroTipoBien" class="form-control" placeholder="Tipo Bien/Servicio"></div>
+        <div class="col"><input type="text" id="filtroCantidad" class="form-control" placeholder="Cantidad"></div>
+        <div class="col"><input type="text" id="filtroValorUnitario" class="form-control" placeholder="Valor Unitario"></div>
+        <div class="col"><input type="text" id="filtroValorTotal" class="form-control" placeholder="Valor Total"></div>
+        <div class="col"><input type="text" id="filtroFecha" class="form-control" placeholder="Fecha"></div>
+        <div class="col"><input type="text" id="filtroProveedor" class="form-control" placeholder="Proveedor"></div>
+        <div class="col"><input type="text" id="filtroDocumentacion" class="form-control" placeholder="Documentación"></div>
+    </div>
+
+    <!-- Tabla -->
+    <div class="table-responsive">
+        <table class="table table-bordered">
+            <thead class="bg-custom text-white">
+                <tr>
+                    <th>Presupuesto</th>
+                    <th>Unidad</th>
+                    <th>Tipo Bien/Servicio</th>
+                    <th>Cantidad</th>
+                    <th>Valor Unitario</th>
+                    <th>Valor Total</th>
+                    <th>Fecha</th>
+                    <th>Proveedor</th>
+                    <th>Documentación</th>
+                    <th>Acción</th>
+                </tr>
+            </thead>
+            <tbody id="tablaAdquisiciones">
+                <tr>
+                    <td>10000</td>
+                    <td>Unidad A</td>
+                    <td>Servicio X</td>
+                    <td>5</td>
+                    <td>$200</td>
+                    <td>$1000</td>
+                    <td>2024-02-18</td>
+                    <td>Proveedor Y</td>
+                    <td>Doc X</td>
+                    <td class="text-center">
+                        <button class="btn btn-danger btn-sm">🗑</button>
+                        <button class="btn btn-primary btn-sm">✏️</button>
+                    </td>
+                </tr>
+                <!-- Más filas dinámicas aquí -->
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const mensajeExito = document.getElementById("mensajeExito");
+
+      // Simulación de mostrar mensaje de éxito
+      setTimeout(() => {
+        mensajeExito.classList.remove("d-none");
+      }, 1000);
+    });
+</script>

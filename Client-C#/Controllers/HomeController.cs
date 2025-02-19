@@ -18,7 +18,7 @@ namespace Client_C_.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+        public IActionResult Visualizar()
         {
             return View();
         }
